@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+         package="com.nytimes.alex.mynews">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.SET_ALARM"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.nytimes.alex.mynews.Controllers.Activities.MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.nytimes.alex.mynews.Controllers.Activities.WebActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.nytimes.alex.mynews.Controllers.Activities.SearchActivity"
+            android:parentActivityName="com.nytimes.alex.mynews.Controllers.Activities.MainActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.nytimes.alex.mynews.Controllers.Activities.MainActivity"/>
+        </activity>
+        <activity
+            android:name="com.nytimes.alex.mynews.Controllers.Activities.ResultActivity"
+            android:parentActivityName="com.nytimes.alex.mynews.Controllers.Activities.MainActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.nytimes.alex.mynews.Controllers.Activities.MainActivity"/>
+        </activity>
+        <activity
+            android:name="com.nytimes.alex.mynews.Controllers.Activities.NotifActivity"
+            android:parentActivityName="com.nytimes.alex.mynews.Controllers.Activities.MainActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.nytimes.alex.mynews.Controllers.Activities.MainActivity"/>
+        </activity>
+        <receiver android:name="com.nytimes.alex.mynews.Utils.NotificationReceiver"/>
+    </application>
+
+</manifest>
